@@ -1,0 +1,19 @@
+{
+  "name": "protractor-tests",
+  "version": "1.0.0",
+  "description": "End-to-end tests with protractor",
+  "main": "auth.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngaruko/protractor.git"
+  },
+  "author": "Bede Ngaruko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngaruko/protractor/issues"
+  },
+  "homepage": "https://github.com/ngaruko/protractor#readme"
+}
