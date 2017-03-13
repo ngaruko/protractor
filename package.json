@@ -2,9 +2,10 @@
   "name": "protractor-tests",
   "version": "1.0.0",
   "description": "End-to-end tests with protractor",
-  "main": "auth.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/protractor conf.js",
+    "start": ""
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ngaruko/protractor/issues"
   },
-  "homepage": "https://github.com/ngaruko/protractor#readme"
+  "homepage": "https://github.com/ngaruko/protractor#readme",
+  "devDependencies": {
+    "faker": "^4.1.0"
+  }
 }
