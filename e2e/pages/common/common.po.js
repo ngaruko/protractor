@@ -1,13 +1,13 @@
 var CommonElements = function() {
 
-    this.medicLogo = element(by.css('.logo-full'));
+    this.medicLogo = element(by.className('logo-full'));
     this.messagesLink=element(by.id('message-tab'));
     this.tasksLink=element(by.id('tasks-tab'));
     this.peoplesLink=element(by.id('contacts-tab'));
     this.targetsLink=element(by.id('analytics-tab'));
     this.historyLink=element(by.id('reports-tab'));
     this.configurationLink=element(by.id('configuration-tab'));
-    this.hamburgerMenu=element(by.css('.dropdown options'));
+    this.hamburgerMenu=element(by.className('dropdown options'));
 
     //vavigation functions
 

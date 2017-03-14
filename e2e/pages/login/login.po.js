@@ -3,29 +3,30 @@ var helper = require('../../helper'),
 
 var LoginPage = function() {
 
-    //random generates from 'faker' library
-var randomUsername = faker.internet.userName();
-    var randomPassword = faker.internet.password();
+
+    //real login
     
 
     //title and texts of notifications/error messages
-    this.pageTitle = 'Etsy :: Your place to buy and sell all things handmade';
-    this.incorrectCredentialsText = 'Password was incorrect.';
+    this.pageTitle = 'Medic Mobile';
+    this.incorrectCredentialsText = 'Incorrect user name or password. Please try again.';
     this.passwordBlankText = "Can't be blank.";
 
     //sign in form elements selected by id
     this.usernameField = element(by.id('user'));
-    this.userPasswordField = element(by.id('password'));
-    this.loginInButton = element(by.id('login'));
+    this.passwordField = element(by.id('password'));
+    this.loginButton = element(by.id('login'));
+    this.incorrectCredentialsError=element(by.className('error incorrect'))
    
-  
     //functions to interact with our page
     
-
     this.login = function(username, password) {
 
-        helper.waitUntilReady(this.userNameField)
-        this.userNameField.sendKeys(username)
+        helper.waitUntilReady(this.usernameField)
+         this.usernameField.clear()
+        this.passwordField.clear()
+
+        this.usernameField.sendKeys(username)
         this.passwordField.sendKeys(password)
         this.loginButton.click()
     }
