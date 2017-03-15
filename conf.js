@@ -12,7 +12,7 @@ exports.config = {
  //specs: ['./pages/*/*.spec.js'],
   //specs: ['spec.js'],
   params: {
-      url: 'https://alpha.dev.medicmobile.org'
+      url: 'http://localhost:5988/medic/login'
   },
   suites: {
       login: './e2e/pages/login/**/*.spec.js',

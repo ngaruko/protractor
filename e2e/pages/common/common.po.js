@@ -1,7 +1,7 @@
 var CommonElements = function() {
 
     this.medicLogo = element(by.className('logo-full'));
-    this.messagesLink=element(by.id('message-tab'));
+    this.messagesLink=element(by.id('messages-tab'));
     this.tasksLink=element(by.id('tasks-tab'));
     this.peoplesLink=element(by.id('contacts-tab'));
     this.targetsLink=element(by.id('analytics-tab'));
