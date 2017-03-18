@@ -37,6 +37,7 @@ describe('Login page : ', function () {
     });
 
     it('should have a title', function () {
+
         expect(browser.getTitle()).toEqual(loginPage.pageTitle);
     });
 

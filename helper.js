@@ -13,7 +13,7 @@ var waitElementToBeClickable = function (elm) {
 var waitUntilReady = function (elm) {
   return browser.wait(function () {
     return elm.isPresent();
-  }, 10000).then(function() {
+  }, 10000).then(function () {
     return browser.wait(function () {
       return elm.isDisplayed();
     }, 10000);
@@ -23,9 +23,9 @@ var waitUntilReady = function (elm) {
 var waitElementToDisappear = function (locator) {
   browser.wait(function () {
     return browser.isElementPresent(locator) //if element is already present, this line will evaluate to true
-    .then(function (presenceOfElement) {
-      return !presenceOfElement
-    }); // this modifies the previous line so that it evaluates to false until the element is no longer present.
+      .then(function (presenceOfElement) {
+        return !presenceOfElement
+      }); // this modifies the previous line so that it evaluates to false until the element is no longer present.
   }, 10000);
 }
 
@@ -44,9 +44,9 @@ var waitForCheckboxToBeChecked = function (elem) {
 */
 var selectDropdownByNumber = function (element, index, milliseconds) {
   element.findElements(by.tagName('option'))
-  .then(function (options) {
-    options[index].click();
-  });
+    .then(function (options) {
+      options[index].click();
+    });
   if (typeof milliseconds != 'undefined') {
     browser.sleep(milliseconds);
   }
@@ -60,21 +60,21 @@ var selectDropdownByNumber = function (element, index, milliseconds) {
 var selectDropdownByText = function selectOption(element, item, milliseconds) {
   var desiredOption;
   element.findElements(by.tagName('option'))
-  .then(function findMatchingOption(options) {
-    options.some(function (option) {
-      option.getText().then(function doesOptionMatch(text) {
-        if (text.indexOf(item) != -1) {
-          desiredOption = option;
-          return true;
-        }
+    .then(function findMatchingOption(options) {
+      options.some(function (option) {
+        option.getText().then(function doesOptionMatch(text) {
+          if (text.indexOf(item) != -1) {
+            desiredOption = option;
+            return true;
+          }
+        });
       });
+    })
+    .then(function clickOption() {
+      if (desiredOption) {
+        desiredOption.click();
+      }
     });
-  })
-  .then(function clickOption() {
-    if (desiredOption) {
-      desiredOption.click();
-    }
-  });
   if (typeof milliseconds != 'undefined') {
     browser.sleep(milliseconds);
   }
@@ -85,7 +85,22 @@ var setBrowserParams = function () {
   browser.ignoreSynchronization = true;
 }
 
-exports.waitElementToBeVisisble = waitElementToBeVisisble;
+var click = function (elm) {
+  waitElementToBeClickable(elm);
+  elm.click();
+};
+
+
+var isTextDisplayed = function (text) {
+ // var selectedElement = element(by.xpath("//*[. = '" + text + "']"));
+//return selectedElement.isPresent();
+
+//return true;
+console.debug(text);
+};
+module.exports=Helper;
+
+/*exports.waitElementToBeVisisble = waitElementToBeVisisble;
 exports.waitElementToBeClickable = waitElementToBeClickable;
 exports.waitElementToDisappear = waitElementToDisappear;
 exports.waitUntilReady = waitUntilReady;
@@ -93,3 +108,6 @@ exports.waitForCheckboxToBeChecked = waitForCheckboxToBeChecked;
 exports.selectDropdownByNumber = selectDropdownByNumber;
 exports.selectDropdownByText = selectDropdownByText;
 exports.setBrowserParams = setBrowserParams;
+exports.click = click;
+exports.isTextDisplayed = isTextDisplayed;
+*/

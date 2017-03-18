@@ -4,9 +4,6 @@ var helper = require('../../helper'),
 var LoginPage = function() {
 
 
-    //real login
-    
-
     //title and texts of notifications/error messages
     this.pageTitle = 'Medic Mobile';
     this.incorrectCredentialsText = 'Incorrect user name or password. Please try again.';

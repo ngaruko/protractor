@@ -1,3 +1,4 @@
+
 var EC = protractor.ExpectedConditions;
 
 var waitElementToBeVisisble = function (elm) {
@@ -86,6 +87,16 @@ var setBrowserParams = function () {
 }
 
 exports.waitElementToBeVisisble = waitElementToBeVisisble;
+var isTextDisplayed = function (text) {
+ var selectedElement = element(by.xpath("//*[text()[normalize-space() = '" + text + "']]"));
+return selectedElement.isPresent();
+
+};
+
+
+//module.exports=Helper;
+
+exports.waitElementToBeVisisble = waitElementToBeVisisble;
 exports.waitElementToBeClickable = waitElementToBeClickable;
 exports.waitElementToDisappear = waitElementToDisappear;
 exports.waitUntilReady = waitUntilReady;
@@ -93,3 +104,6 @@ exports.waitForCheckboxToBeChecked = waitForCheckboxToBeChecked;
 exports.selectDropdownByNumber = selectDropdownByNumber;
 exports.selectDropdownByText = selectDropdownByText;
 exports.setBrowserParams = setBrowserParams;
+//exports.click = click;
+exports.isTextDisplayed = isTextDisplayed;
+

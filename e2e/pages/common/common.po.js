@@ -3,9 +3,9 @@ var CommonElements = function() {
     this.medicLogo = element(by.className('logo-full'));
     this.messagesLink=element(by.id('messages-tab'));
     this.tasksLink=element(by.id('tasks-tab'));
-    this.peoplesLink=element(by.id('contacts-tab'));
-    this.targetsLink=element(by.id('analytics-tab'));
-    this.historyLink=element(by.id('reports-tab'));
+    this.contactsLink=element(by.id('contacts-tab'));
+    this.analyticsLink=element(by.id('analytics-tab'));
+    this.reportsLink=element(by.id('reports-tab'));
     this.configurationLink=element(by.id('configuration-tab'));
     this.hamburgerMenu=element(by.className('dropdown options'));
 
